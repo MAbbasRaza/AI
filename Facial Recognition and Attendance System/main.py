@@ -54,7 +54,7 @@ while True:
         if matches[matchIndex]:
             name = classNames[matchIndex].upper().lower()
             y1,x2,y2,x1 = faceloc
-            # since we scaled down by 4 times
+            # since we scaled down by 4 times.
             y1, x2,y2,x1 = y1*4,x2*4,y2*4,x1*4
             cv2.rectangle(img,(x1,y1),(x2,y2),(0,255,0),2)
             cv2.rectangle(img, (x1,y2-35),(x2,y2), (0,255,0), cv2.FILLED)
