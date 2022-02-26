@@ -116,7 +116,7 @@ while True:
 ## Sample
 
 Sample Face Images in `training_images` folder <br/>
-![Sample image](result/Abbas Raza 211.png) <br/>
+![Sample image](result/Abbas_Raza_211.png) <br/>
 
 Detected Face <br/>
 ![Result](result/myImage1.jpg)
