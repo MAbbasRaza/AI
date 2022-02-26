@@ -4,7 +4,7 @@ import os
 import numpy as np
 from datetime import datetime
 
-path = 'images'
+path = 'training_images'
 
 images = []
 classNames = []
