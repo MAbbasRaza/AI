@@ -6,23 +6,23 @@ from datetime import datetime
 
 path = 'training_images'
 
-images = []
+training_images = []
 classNames = []
 mylist = os.listdir(path)
 for cl in mylist:
     curImg = cv2.imread(f'{path}/{cl}')
-    images.append(curImg)
+    training_images.append(curImg)
     classNames.append(os.path.splitext(cl)[0])
 
     
-def findEncodings(images):
+def findEncodings(training_images):
     encodeList = []
-    for img in images:
+    for img in training_images:
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         encoded_face = face_recognition.face_encodings(img)[0]
         encodeList.append(encoded_face)
     return encodeList
-encoded_face_train = findEncodings(images)
+encoded_face_train = findEncodings(training_images)
 
 def markAttendance(name):
     with open('attendance.csv','r+') as f:
@@ -54,7 +54,7 @@ while True:
         if matches[matchIndex]:
             name = classNames[matchIndex].upper().lower()
             y1,x2,y2,x1 = faceloc
-            # since we scaled down by 4 times.
+            # since we scaled down by 4 times
             y1, x2,y2,x1 = y1*4,x2*4,y2*4,x1*4
             cv2.rectangle(img,(x1,y1),(x2,y2),(0,255,0),2)
             cv2.rectangle(img, (x1,y2-35),(x2,y2), (0,255,0), cv2.FILLED)
