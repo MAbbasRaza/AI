@@ -53,7 +53,7 @@ cv.waitKey(0)
 cv.destroyAllWindows()
 ```
 
-## Demo
+## Sample
 ![Sample 1](images/myImage1.jpeg)
 ![Sample 2](images/myImage2.jpeg)
 
